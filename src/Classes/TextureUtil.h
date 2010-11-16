@@ -12,3 +12,4 @@
 
 SPTexture * makeRoundedCornerRect(float width,float height, float radius, UIColor *color);
 SPTexture * makeRoundedRectWithBorder(float width,float height, float radius, UIColor *color, UIColor *borderColor);
+SPTexture * makeCircle(float radius, UIColor *color);
