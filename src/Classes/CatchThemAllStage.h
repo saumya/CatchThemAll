@@ -11,14 +11,17 @@
 
 #import "TextureUtil.h"
 #import "CTASprite.h"
+#import "CTARow.h"
 
 
 @interface CatchThemAllStage : SPSprite 
 {
 	SPJuggler *mJuggler;
+	CTASprite *background;
 }
 
-@property (retain) SPJuggler *mJuggler;
+@property (nonatomic, retain) SPJuggler *mJuggler;
+@property (nonatomic, retain) CTASprite *background;
 
 - (id)initWithWidth:(float)width height:(float)height;
 
