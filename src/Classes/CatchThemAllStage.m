@@ -11,44 +11,28 @@
 
 @implementation CatchThemAllStage
 
+@synthesize mJuggler;
+
 - (id)initWithWidth:(float)width height:(float)height
 {
 	if (self=[super init]) 
 	{
 		//Custom code
-		/*
-		NSLog(@"Game Stage : %@",self);
-		NSLog(@"Game Stage : width %f",width);
-		NSLog(@"Game Stage : height %f",height);
-		 */
 		//let the game begin :)
 		[self renderDefaultScreen];
+		NSLog(@"stage %@",self.stage);
 	}
 	return self;
 }
 
 -(void)renderDefaultScreen
 {
-	/*
-	 SPQuad *quad = [SPQuad quadWithWidth:100 height:100];
-	 quad.color = 0xff0000;
-	 quad.x = 50;
-	 quad.y = 50;
-	 [self addChild:quad];
-	 */
 	 //
 	UIColor *fill=[UIColor colorWithRed:0.4 green:0.2 blue:0.4 alpha:1.0];
 	UIColor *border=[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 	 
 	SPTexture *tt=makeRoundedCornerRect(50.0f, 50.0f, 10.0f,fill);
 	SPTexture *t=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, fill,border);
-	
-	SPTexture *c=makeCircle(10.0f, fill);
-	SPImage *img6=[SPImage imageWithTexture:c];
-	[self addChild:img6];
-	img6.x=150;
-	img6.y=100;
-	[c release];
 	
 	SPImage *img1=[SPImage imageWithTexture:t];
 	SPImage *img2=[SPImage imageWithTexture:t];
@@ -72,6 +56,90 @@
 	[tt release];
 	[t release];
 	//[red release];
+	
+	//makes the sprites
+	SPTexture *c=makeCircle(10.0f, fill);
+	SPImage *img6=[SPImage imageWithTexture:c];
+	[c release];
+	[self addChild:img6];
+	img6.x=150;
+	img6.y=100;
+	
+	
+	CTASprite *ctaSP=[[CTASprite alloc] initWithDefault];
+	[self addChild:ctaSP];
+	[ctaSP addImage:img6];
+	//
+	//[c release];
+	//[img6 release];
+	//ctaSP.x=0;
+	//SPTween *tween=[SPTween tweenWithTarget:ctaSP time:10.0];
+	//[tween animateProperty:@"width" targetValue:300.0];
+	//[tween animateProperty:@"height" targetValue:300.0];
+	//[tween animateProperty:@"x" targetValue:300.0];
+	/*
+	[tween advanceTime:1.0];
+	[tween advanceTime:1.0];
+	[tween advanceTime:1.0];
+	*/
+	
+	//SPJuggler *mJuggler=[SPJuggler juggler];
+	//[mJuggler addObject:tween];
+	
+	//[self.stage.juggler addObject:tween];
+	//NSLog(@"stage juggler is %@",self.stage.juggler);
+	self.mJuggler=[SPJuggler juggler];
+	
+	SPTween *tweenAnimated = [SPTween tweenWithTarget:ctaSP
+												 time:4.0f
+										   transition:SP_TRANSITION_LINEAR];
+	[tweenAnimated setDelay:0.0f];
+	[tweenAnimated animateProperty:@"y" targetValue:200];
+	[tweenAnimated animateProperty:@"x" targetValue:100];
+	[tweenAnimated animateProperty:@"width" targetValue:200];
+	[tweenAnimated animateProperty:@"height" targetValue:200];
+	
+	[tweenAnimated addEventListener:@selector(onTweenCompleted:) 
+				   atObject:self 
+					forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
+	//
+	[mJuggler addObject:tweenAnimated];
+	//
+	[self addEventListener:@selector(onEachFrame:) 
+				  atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+}
+
+-(void)onEachFrame:(SPEnterFrameEvent *)event
+{
+	double passedTime=event.passedTime;
+	[self advanceTime:passedTime];
+}
+
+-(void)advanceTime:(double)seconds
+{
+	[self.mJuggler advanceTime:seconds];
+}
+
+-(void)onTweenCompleted:(SPEvent *)event
+{
+	NSLog(@"Tween Completed. %@",event.target);
+	/*
+	SPTween *t=event.target;
+	[t removeEventListener:@selector(onTweenCompleted:) 
+						   atObject:self 
+							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
+	*/
+	/*
+	[t addEventListener:@selector(onTweenCompleted:) 
+						   atObject:self 
+							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
+	*/
+}
+
+-(void) dealloc
+{
+	[mJuggler release];
+	[super dealloc];
 }
 
 @end

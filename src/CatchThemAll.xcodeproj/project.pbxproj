@@ -14,6 +14,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		990F9A75128FAE4C009D7656 /* CatchThemAllStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */; };
 		990F9AA2128FB779009D7656 /* TextureUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F9AA1128FB779009D7656 /* TextureUtil.m */; };
+		995C250F1293B141006FAD04 /* CTASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C250E1293B141006FAD04 /* CTASprite.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		DE3F093A11B7B9DC009D4DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		DE3F097811B7BABD009D4DB0 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
@@ -61,6 +62,8 @@
 		990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchThemAllStage.m; sourceTree = "<group>"; };
 		990F9AA0128FB779009D7656 /* TextureUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureUtil.h; sourceTree = "<group>"; };
 		990F9AA1128FB779009D7656 /* TextureUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureUtil.m; sourceTree = "<group>"; };
+		995C250D1293B141006FAD04 /* CTASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTASprite.h; sourceTree = "<group>"; };
+		995C250E1293B141006FAD04 /* CTASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTASprite.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE3F097711B7BABD009D4DB0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */,
 				990F9AA0128FB779009D7656 /* TextureUtil.h */,
 				990F9AA1128FB779009D7656 /* TextureUtil.m */,
+				995C250D1293B141006FAD04 /* CTASprite.h */,
+				995C250E1293B141006FAD04 /* CTASprite.m */,
 			);
 			name = catchThemAll;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				DE4A3DE510FFB2AF00FDA492 /* Game.m in Sources */,
 				990F9A75128FAE4C009D7656 /* CatchThemAllStage.m in Sources */,
 				990F9AA2128FB779009D7656 /* TextureUtil.m in Sources */,
+				995C250F1293B141006FAD04 /* CTASprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

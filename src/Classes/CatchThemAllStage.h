@@ -10,14 +10,20 @@
 #import "Sparrow.h"
 
 #import "TextureUtil.h"
+#import "CTASprite.h"
 
 
 @interface CatchThemAllStage : SPSprite 
 {
+	SPJuggler *mJuggler;
 }
+
+@property (retain) SPJuggler *mJuggler;
 
 - (id)initWithWidth:(float)width height:(float)height;
 
 -(void)renderDefaultScreen;
+
+-(void)advanceTime:(double)seconds;
 
 @end
