@@ -276,7 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>11</integer>
 									<integer>5</integer>
 									<integer>4</integer>
 									<integer>0</integer>
@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CatchThemAllStage.m</string>
+								<string>CTASprite.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CatchThemAllStage.m</string>
+										<string>CTASprite.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>995C28041294761F006FAD04</string>
+										<string>995C288D12948BF1006FAD04</string>
 										<key>history</key>
 										<array>
 											<string>995C26271293E21D006FAD04</string>
@@ -341,13 +341,13 @@
 											<string>995C262D1293E21D006FAD04</string>
 											<string>995C26571293E45C006FAD04</string>
 											<string>995C26581293E45C006FAD04</string>
-											<string>995C268D1293F932006FAD04</string>
-											<string>995C270F129401A7006FAD04</string>
-											<string>995C2771129467A3006FAD04</string>
-											<string>995C2772129467A3006FAD04</string>
-											<string>995C2773129467A3006FAD04</string>
-											<string>995C2774129467A3006FAD04</string>
-											<string>995C2775129467A3006FAD04</string>
+											<string>995C280812947B5B006FAD04</string>
+											<string>995C285D129487C5006FAD04</string>
+											<string>995C2878129489C8006FAD04</string>
+											<string>995C288412948B69006FAD04</string>
+											<string>995C288512948B69006FAD04</string>
+											<string>995C288A12948BE5006FAD04</string>
+											<string>995C288B12948BE5006FAD04</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -572,7 +572,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CTARow.m</string>
+								<string>CTASprite.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
