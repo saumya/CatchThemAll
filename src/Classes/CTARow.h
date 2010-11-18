@@ -33,6 +33,6 @@
 -(id)initWithSprites;
 -(void)makeDefaultSprites;
 
--(void)updateSpriteData:(int)value;
+-(void)updateSpriteData;
 
 @end

@@ -16,6 +16,7 @@
 		990F9AA2128FB779009D7656 /* TextureUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F9AA1128FB779009D7656 /* TextureUtil.m */; };
 		995C250F1293B141006FAD04 /* CTASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C250E1293B141006FAD04 /* CTASprite.m */; };
 		995C26891293F45F006FAD04 /* CTARow.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C26881293F45F006FAD04 /* CTARow.m */; };
+		99D5996712954CC500EA60B2 /* SaumyaEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D5996612954CC500EA60B2 /* SaumyaEvent.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		DE3F093A11B7B9DC009D4DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		DE3F097811B7BABD009D4DB0 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
@@ -67,6 +68,8 @@
 		995C250E1293B141006FAD04 /* CTASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTASprite.m; sourceTree = "<group>"; };
 		995C26871293F45F006FAD04 /* CTARow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTARow.h; sourceTree = "<group>"; };
 		995C26881293F45F006FAD04 /* CTARow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTARow.m; sourceTree = "<group>"; };
+		99D5996512954CC500EA60B2 /* SaumyaEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaumyaEvent.h; sourceTree = "<group>"; };
+		99D5996612954CC500EA60B2 /* SaumyaEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaumyaEvent.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE3F097711B7BABD009D4DB0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -165,6 +168,7 @@
 		990F9A6D128FAE24009D7656 /* catchThemAll */ = {
 			isa = PBXGroup;
 			children = (
+				99D5996412954CA000EA60B2 /* event */,
 				990F9A73128FAE4C009D7656 /* CatchThemAllStage.h */,
 				990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */,
 				990F9AA0128FB779009D7656 /* TextureUtil.h */,
@@ -175,6 +179,15 @@
 				995C26881293F45F006FAD04 /* CTARow.m */,
 			);
 			name = catchThemAll;
+			sourceTree = "<group>";
+		};
+		99D5996412954CA000EA60B2 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				99D5996512954CC500EA60B2 /* SaumyaEvent.h */,
+				99D5996612954CC500EA60B2 /* SaumyaEvent.m */,
+			);
+			name = event;
 			sourceTree = "<group>";
 		};
 		DE4A3DAB10FFB0DB00FDA492 /* Products */ = {
@@ -275,6 +288,7 @@
 				990F9AA2128FB779009D7656 /* TextureUtil.m in Sources */,
 				995C250F1293B141006FAD04 /* CTASprite.m in Sources */,
 				995C26891293F45F006FAD04 /* CTARow.m in Sources */,
+				99D5996712954CC500EA60B2 /* SaumyaEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

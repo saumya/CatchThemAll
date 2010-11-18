@@ -29,39 +29,18 @@
 
 -(void)makeDefaultSprites
 {
-	UIColor *fill=[UIColor colorWithRed:0.4 green:0.2 blue:0.4 alpha:1.0];
-	UIColor *border=[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-	
-	SPTexture *tt=makeRoundedCornerRect(50.0f, 50.0f, 10.0f,fill);
-	SPTexture *t=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, fill,border);
-	//
-	SPImage *img1=[SPImage imageWithTexture:t];
-	SPImage *img2=[SPImage imageWithTexture:t];
-	SPImage *img3=[SPImage imageWithTexture:tt];
-	SPImage *img4=[SPImage imageWithTexture:t];
-	SPImage *img5=[SPImage imageWithTexture:t];
-	SPImage *img6=[SPImage imageWithTexture:tt];
-	[tt release];
-	[t release];
-	//
 	self.ctaOne=[[CTASprite alloc] initWithDefault];
-	//[self.ctaOne addImage:img1];
-	[self.ctaOne updateValue:1];
+	[self.ctaOne renderDefault:1];
 	self.ctaTwo=[[CTASprite alloc] initWithDefault];
-	//[self.ctaTwo addImage:img2];
-	[self.ctaTwo updateValue:2];
+	[self.ctaTwo renderDefault:2];
 	self.ctaThree=[[CTASprite alloc] initWithDefault];
-	//[self.ctaThree addImage:img3];
-	[self.ctaThree updateValue:3];
+	[self.ctaThree renderDefault:3];
 	self.ctaFour=[[CTASprite alloc] initWithDefault];
-	//[self.ctaFour addImage:img4];
-	[self.ctaFour updateValue:4];
+	[self.ctaFour renderDefault:4];
 	self.ctaFive=[[CTASprite alloc] initWithDefault];
-	//[self.ctaFive addImage:img5];
-	[self.ctaFive updateValue:5];
+	[self.ctaFive renderDefault:5];
 	self.ctaSix=[[CTASprite alloc] initWithDefault];
-	//[self.ctaSix addImage:img6];
-	[self.ctaSix updateValue:6];
+	[self.ctaSix renderDefault:1];
 	//25 being the width/2
 	ctaOne.x=0+25;
 	ctaTwo.x=50+25;
@@ -78,9 +57,17 @@
 	[self addChild:ctaSix];
 }
 
--(void)updateSpriteData:(int)value
+-(void)updateSpriteData
 {
-	//TODO : 
+	//NSLog(@"updateSpriteData : random num is %i",rand());
+	//
+	[self.ctaOne updateValue];
+	[self.ctaTwo updateValue];
+	[self.ctaThree updateValue];
+	[self.ctaFour updateValue];
+	[self.ctaFive updateValue];
+	[self.ctaSix updateValue];
+	 
 }
 
 -(void)dealloc

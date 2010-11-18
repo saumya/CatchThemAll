@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Sparrow.h"
 #import "TextureUtil.h"
+#import "SaumyaEvent.h"
 
 @interface CTASprite : SPSprite {
 	SPImage *img;
@@ -29,7 +30,8 @@
 
 -(id)initWithDefault;
 -(void)bakeTheTextures;
+-(void)renderDefault:(int)value;
 -(void)addImage:(SPImage *)image;
--(void)updateValue:(int)value;
+-(void)updateValue;
 
 @end

@@ -45,18 +45,7 @@
 	textureFive=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorFive, colorBorder);
 }
 
--(void)addImage:(SPImage *)image
-{
-	self.img=image;
-	self.img.x=0-self.img.width/2;
-	self.img.y=0-self.img.height/2;
-	[self addChild:img];
-	//now move this object to the original position
-	self.x=self.img.width/2;
-	self.y=self.img.height/2;
-}
-
--(void)updateValue:(int)value
+-(void)renderDefault:(int)value
 {
 	if (value==1) {
 		SPImage *textureImage=[SPImage imageWithTexture:self.textureOne];
@@ -77,7 +66,58 @@
 		SPImage *textureImage=[SPImage imageWithTexture:self.textureTwo];
 		[self addImage:textureImage];
 	}
+	
+}
 
+-(void)addImage:(SPImage *)image
+{
+	//NSLog(@"addImage : ---");
+	[self removeChild:self.img];
+	
+	self.img=image;
+	self.img.x=0-self.img.width/2;
+	self.img.y=0-self.img.height/2;
+	[self addChild:self.img];
+	//now move this object to the original position
+	//self.x=self.img.width/2;
+	//self.y=self.img.height/2;
+}
+
+-(void)updateValue
+{
+	//NSLog(@"rand() : %i",rand());
+	//NSLog(@"random() : %i",random());
+	//NSLog(@"arc4random() : %i",1+arc4random()%5);
+	int value=0;
+	value=1+arc4random()%5;
+	
+	if (value==1) {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureOne];
+		[self addImage:textureImage];
+	}else if (value==2) {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureTwo];
+		[self addImage:textureImage];
+	}else if (value==3) {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureThree];
+		[self addImage:textureImage];
+	}else if (value==4) {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureFour];
+		[self addImage:textureImage];
+	}else if (value==5) {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureFive];
+		[self addImage:textureImage];
+	}else {
+		SPImage *textureImage=[SPImage imageWithTexture:self.textureTwo];
+		[self addImage:textureImage];
+	}
+	
+	
+	SaumyaEvent *evt=[[SaumyaEvent alloc] initWithType:EVENT_VALUE_REFRESHED 
+											   bubbles:TRUE];
+	evt.newValue=value;
+	[self dispatchEvent:evt];
+	[evt release];
+	
 }
 
 -(void)dealloc
