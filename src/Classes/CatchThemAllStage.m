@@ -16,6 +16,9 @@
 @synthesize areOptionsOnScreen;
 @synthesize transitionAnimationCounter;
 
+@synthesize infoSprite;
+@synthesize isInstructionVisible;
+
 @synthesize rowOne;
 @synthesize rowTwo;
 @synthesize rowThree;
@@ -56,6 +59,11 @@
 
 -(void)renderDefaultScreen
 {
+	//instruction screen
+	infoSprite=[[InstructionSprite alloc]initWithInstruction];
+	[self addChild:infoSprite];
+	self.isInstructionVisible=TRUE;
+	
 	//initalises the values
 	userWrongAnswerCount=0;
 	userCorrectAnswerCount=0;
@@ -175,10 +183,44 @@
 	rowEight.y=rowSeven.y+50;
 	//
 	self.mJuggler=[SPJuggler juggler];
-	//Initialising the handlers
+	
+	//Initialising the run loop
 	[self addEventListener:@selector(onEachFrame:) 
 				  atObject:self 
 				   forType:SP_EVENT_TYPE_ENTER_FRAME];
+	[self.infoSprite addEventListener:@selector(onUserTouchInfo:) 
+				  atObject:self 
+				   forType:SP_EVENT_TYPE_TOUCH];
+	/*
+	 [self addEventListener:@selector(onUserTouch:) 
+				  atObject:self 
+				   forType:SP_EVENT_TYPE_TOUCH];
+	[self addEventListener:@selector(onTransitionInComplete:) 
+				  atObject:self 
+				   forType:EVENT_TYPE_TRANSITION_IN_TWEEN_END];
+	[self addEventListener:@selector(onTransitionOutComplete:) 
+				  atObject:self 
+				   forType:EVENT_TYPE_TRANSITION_OUT_TWEEN_END];
+	[self addEventListener:@selector(onOptionRefresh:) 
+				  atObject:self 
+				   forType:EVENT_VALUE_REFRESHED];
+	*/
+	 //action time
+	//display the options
+	[self transitIn];
+	//
+	[self removeChild:infoSprite];
+	[self addChild:infoSprite];
+}
+
+-(void)activateGame
+{
+	//Initialising the handlers
+	/*
+	[self addEventListener:@selector(onEachFrame:) 
+				  atObject:self 
+				   forType:SP_EVENT_TYPE_ENTER_FRAME];
+	*/
 	[self addEventListener:@selector(onUserTouch:) 
 				  atObject:self 
 				   forType:SP_EVENT_TYPE_TOUCH];
@@ -191,25 +233,13 @@
 	[self addEventListener:@selector(onOptionRefresh:) 
 				  atObject:self 
 				   forType:EVENT_VALUE_REFRESHED];
-	
-	 //action time
-	//display the options
-	[self transitIn];
 }
 
 -(void)onEachFrame:(SPEnterFrameEvent *)event
 {
-	//NSLog(@"onEachFrame----");
-	//check for the display Objects
-	/*
-	if (rowOne.x==10 && rowTwo.x==10 && rowThree.x==10 && rowFour.x==10 && rowFive.x==10 && rowSix.x==10 && rowSeven.x==10 && rowEight.x==10) {
-		areOptionsOnScreen=TRUE;
-		//NSLog(@"optioins on screen = %@",areOptionsOnScreen);
-	} else if (rowOne.x==-800 && rowTwo.x==800 && rowThree.x==-800 && rowFour.x==800 && rowFive.x==-800 && rowSix.x==800 && rowSeven.x==-800 && rowEight.x==800) {
-		areOptionsOnScreen=FALSE;
-		//[self updateRows];
-	}
-	*/
+	if (!isInstructionVisible) {
+		
+	
 	if (areOptionsOnScreen) {
 		self.timerCounter++;
 		//check and move to next question in case timeout
@@ -219,7 +249,7 @@
 			self.areOptionsOnScreen=FALSE;
 		}
 	}
-	//self.timerCounter++;
+	}
 	self.displayTimer.text=[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",timerCounter]];
 	self.displayScore.text=[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",userCorrectAnswerCount]];
 	self.displayMiss.text=[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",userWrongAnswerCount]];
@@ -233,20 +263,6 @@
 -(void)advanceTime:(double)seconds
 {
 	[self.mJuggler advanceTime:seconds];
-}
-
--(void)updateRows
-{
-	//[rowOne updateSpriteData:2];
-	/*
-	[rowTwo updateSpriteData:3];
-	[rowThree updateSpriteData:4];
-	[rowFour updateSpriteData:5];
-	[rowFive updateSpriteData:6];
-	[rowSix updateSpriteData:7];
-	[rowSeven updateSpriteData:8];
-	[rowEight updateSpriteData:9];
-	*/
 }
 
 -(void)onTweenCompleted:(SPEvent *)event
@@ -263,6 +279,19 @@
 						   atObject:self 
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
 	*/
+}
+
+- (void)onUserTouchInfo:(SPTouchEvent*)event
+{
+	SPTouch *touch = [[event touchesWithTarget:self andPhase:SPTouchPhaseBegan] anyObject];
+	if (touch) {
+		NSLog(@"READY ! Start the game !");
+		self.infoSprite.visible=FALSE;
+		self.isInstructionVisible=FALSE;
+		
+		[self transitOut];
+		[self activateGame];
+	}
 }
 
 - (void)onUserTouch:(SPTouchEvent*)event
@@ -611,6 +640,8 @@
 	[mJuggler release];
 	[background release];
 	//[areOptionsOnScreen release];//seems not required!
+	[infoSprite release];
+	//[isInstructionVisible release];
 	
 	[rowOne release];
 	[rowTwo release];

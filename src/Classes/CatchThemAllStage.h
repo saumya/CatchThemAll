@@ -12,6 +12,7 @@
 #import "TextureUtil.h"
 #import "CTASprite.h"
 #import "CTARow.h"
+#import "InstructionSprite.h"
 #import "SaumyaEvent.h"
 
 
@@ -21,6 +22,9 @@
 	CTASprite *background;
 	Boolean areOptionsOnScreen;
 	int transitionAnimationCounter;
+	
+	InstructionSprite *infoSprite;
+	Boolean isInstructionVisible;
 	
 	CTARow *rowOne;
 	CTARow *rowTwo;
@@ -52,6 +56,9 @@
 @property (nonatomic, retain) CTASprite *background;
 @property (nonatomic, assign) Boolean areOptionsOnScreen;
 @property (nonatomic, assign) int transitionAnimationCounter;
+
+@property (nonatomic, assign) InstructionSprite *infoSprite;
+@property (nonatomic, assign) Boolean isInstructionVisible;
 
 @property (nonatomic, retain) CTARow *rowOne;
 @property (nonatomic, retain) CTARow *rowTwo;

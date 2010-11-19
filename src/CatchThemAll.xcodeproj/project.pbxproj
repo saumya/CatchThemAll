@@ -16,6 +16,7 @@
 		990F9AA2128FB779009D7656 /* TextureUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F9AA1128FB779009D7656 /* TextureUtil.m */; };
 		995C250F1293B141006FAD04 /* CTASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C250E1293B141006FAD04 /* CTASprite.m */; };
 		995C26891293F45F006FAD04 /* CTARow.m in Sources */ = {isa = PBXBuildFile; fileRef = 995C26881293F45F006FAD04 /* CTARow.m */; };
+		99A6536A129697A00007F230 /* InstructionSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A65369129697A00007F230 /* InstructionSprite.m */; };
 		99D5996712954CC500EA60B2 /* SaumyaEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D5996612954CC500EA60B2 /* SaumyaEvent.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		DE3F093A11B7B9DC009D4DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
@@ -68,6 +69,8 @@
 		995C250E1293B141006FAD04 /* CTASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTASprite.m; sourceTree = "<group>"; };
 		995C26871293F45F006FAD04 /* CTARow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTARow.h; sourceTree = "<group>"; };
 		995C26881293F45F006FAD04 /* CTARow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTARow.m; sourceTree = "<group>"; };
+		99A65368129697A00007F230 /* InstructionSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionSprite.h; sourceTree = "<group>"; };
+		99A65369129697A00007F230 /* InstructionSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionSprite.m; sourceTree = "<group>"; };
 		99D5996512954CC500EA60B2 /* SaumyaEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaumyaEvent.h; sourceTree = "<group>"; };
 		99D5996612954CC500EA60B2 /* SaumyaEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaumyaEvent.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				995C250E1293B141006FAD04 /* CTASprite.m */,
 				995C26871293F45F006FAD04 /* CTARow.h */,
 				995C26881293F45F006FAD04 /* CTARow.m */,
+				99A65368129697A00007F230 /* InstructionSprite.h */,
+				99A65369129697A00007F230 /* InstructionSprite.m */,
 			);
 			name = catchThemAll;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				995C250F1293B141006FAD04 /* CTASprite.m in Sources */,
 				995C26891293F45F006FAD04 /* CTARow.m in Sources */,
 				99D5996712954CC500EA60B2 /* SaumyaEvent.m in Sources */,
+				99A6536A129697A00007F230 /* InstructionSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
