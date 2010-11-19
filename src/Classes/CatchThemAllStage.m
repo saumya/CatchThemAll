@@ -184,13 +184,20 @@
 	//
 	self.mJuggler=[SPJuggler juggler];
 	
+	//listen for skip info event to start the game
+	[self addEventListener:@selector(onSkipInfo:) 
+				  atObject:self 
+				   forType:EVENT_SKIP_INFO];
+ 	
 	//Initialising the run loop
 	[self addEventListener:@selector(onEachFrame:) 
 				  atObject:self 
 				   forType:SP_EVENT_TYPE_ENTER_FRAME];
+	/*
 	[self.infoSprite addEventListener:@selector(onUserTouchInfo:) 
 				  atObject:self 
 				   forType:SP_EVENT_TYPE_TOUCH];
+	*/
 	/*
 	 [self addEventListener:@selector(onUserTouch:) 
 				  atObject:self 
@@ -235,20 +242,29 @@
 				   forType:EVENT_VALUE_REFRESHED];
 }
 
+-(void)onSkipInfo:(SaumyaEvent *)event
+{
+	[self removeChild:infoSprite];
+	
+	self.infoSprite.visible=FALSE;
+	self.isInstructionVisible=FALSE;
+	
+	[self transitOut];
+	[self activateGame];
+}
+
 -(void)onEachFrame:(SPEnterFrameEvent *)event
 {
 	if (!isInstructionVisible) {
-		
-	
-	if (areOptionsOnScreen) {
-		self.timerCounter++;
-		//check and move to next question in case timeout
-		if (self.timerCounter>=1000) {
-			self.userWrongAnswerCount++;
-			[self transitOut];
-			self.areOptionsOnScreen=FALSE;
+		if (areOptionsOnScreen) {
+			self.timerCounter++;
+			//check and move to next question in case timeout
+			if (self.timerCounter>=1000) {
+				self.userWrongAnswerCount++;
+				[self transitOut];
+				self.areOptionsOnScreen=FALSE;
+			}
 		}
-	}
 	}
 	self.displayTimer.text=[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",timerCounter]];
 	self.displayScore.text=[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",userCorrectAnswerCount]];
