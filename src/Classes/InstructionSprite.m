@@ -80,7 +80,7 @@
 	info.y=120;
 	//fillup information 
 	//info.text=[NSString stringWithFormat:@"Each colour has a value. Colors from left to right hold values in the increasing order from 1 to 5. The left most is 1(Red color). Each color can be grabbed with the same number of fingure/s. If its value is 1, you have to tap a sinlge fingure to grab it. Quest is to get the color which is displayed maximum time per question. Each question will change when timer counter hits 1000, making you loose 1 point. Catch Them All."];
-	info.text=[NSString stringWithFormat:@"Each colour has a value.Each touch has a single value. You have to match the touche/touches with the value of the color to catch it. Touch now."];	
+	info.text=[NSString stringWithFormat:@"Catch the most visible color with touch. Each color is associated with a different kind of touch. Touch here now for more information."];	
 	[self addChild:bg];
 	[self addChild:infoTitle];
 	[self addChild:info];

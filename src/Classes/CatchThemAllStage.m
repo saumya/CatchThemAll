@@ -218,6 +218,17 @@
 	//
 	[self removeChild:infoSprite];
 	[self addChild:infoSprite];
+	/*
+	//animate the info screen
+	infoSprite.scaleX=0.1;
+	infoSprite.scaleY=0.1;
+	SPTween *infoTween=[SPTween tweenWithTarget:infoSprite 
+											 time:2.4 
+									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
+	[infoTween animateProperty:@"scaleX" targetValue:1.0];
+	[infoTween animateProperty:@"scaleY" targetValue:1.0];
+	[mJuggler addObject:infoTween];
+	*/
 }
 
 -(void)activateGame
@@ -317,13 +328,13 @@
 		
 	
 	if (touches.count==1) {
-		NSLog(@"1 fingure touch : ----------- ");
+		//NSLog(@"1 fingure touch : ----------- ");
 		//
 		if (correctAnswerNum==1) {
-			NSLog(@"CORRECT RESPONSE : ");
+			NSLog(@"CORRECT RESPONSE : --------------- ");
 			self.userCorrectAnswerCount++;
 		}else {
-			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			NSLog(@"xxxxxxxx WRONG xxxxxxxx ---------- ");
 			self.userWrongAnswerCount++;
 		}
 		/*
@@ -338,42 +349,42 @@
 		[self transitOut];
 		self.areOptionsOnScreen=FALSE;
 	}else if (touches.count==2) {
-		NSLog(@"2 fingure touch : ----------- ");
+		//NSLog(@"2 fingure touch : ----------- ");
 		if (correctAnswerNum==2) {
-			NSLog(@"CORRECT RESPONSE : ");
+			NSLog(@"CORRECT RESPONSE : --------------- ");
 			self.userCorrectAnswerCount++;
 		}else {
-			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			NSLog(@"xxxxxxxx WRONG xxxxxxxx ---------- ");
 			self.userWrongAnswerCount++;
 		}
 		[self transitOut];
 		self.areOptionsOnScreen=FALSE;
 	}else if (touches.count==3) {
 		if (correctAnswerNum==3) {
-			NSLog(@"CORRECT RESPONSE : ");
+			NSLog(@"CORRECT RESPONSE : --------------- ");
 			self.userCorrectAnswerCount++;
 		}else {
-			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			NSLog(@"xxxxxxxx WRONG xxxxxxxx ---------- ");
 			self.userWrongAnswerCount++;
 		}
 		[self transitOut];
 		self.areOptionsOnScreen=FALSE;
 	}else if (correctAnswerNum==4) {
 		if (correctAnswerNum==4) {
-			NSLog(@"CORRECT RESPONSE : ");
+			NSLog(@"CORRECT RESPONSE : --------------- ");
 			self.userCorrectAnswerCount++;
 		}else {
-			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			NSLog(@"xxxxxxxx WRONG xxxxxxxx ---------- ");
 			self.userWrongAnswerCount++;
 		}
 		[self transitOut];
 		self.areOptionsOnScreen=FALSE;
 	}else if (correctAnswerNum==5) {
 		if (correctAnswerNum==5) {
-			NSLog(@"CORRECT RESPONSE : ");
+			NSLog(@"CORRECT RESPONSE : --------------- ");
 			self.userCorrectAnswerCount++;
 		}else {
-			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			NSLog(@"xxxxxxxx WRONG xxxxxxxx ---------- ");
 			self.userWrongAnswerCount++;
 		}
 		[self transitOut];
