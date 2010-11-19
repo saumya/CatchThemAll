@@ -86,7 +86,7 @@ SPTexture * makeRoundedRectWithBorder(float width,float height, float radius, UI
 					  
 					  //makes the forground
 					  //CGFloat borderThickness_f=0.0f;
-					  CGRect rect_f=CGRectMake(borderThickness+2, borderThickness+2, width-4, height-4);
+					  CGRect rect_f=CGRectMake(borderThickness+4, borderThickness+4, width-8, height-8);
 					  //CGFloat radius=10.0f;
 					  
 					  CGMutablePathRef path_f= CGPathCreateMutable();

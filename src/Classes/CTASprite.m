@@ -34,15 +34,16 @@
 	UIColor *colorOne=[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
 	UIColor *colorTwo=[UIColor colorWithRed:0.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:1.0];
 	UIColor *colorThree=[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
-	UIColor *colorFour=[UIColor colorWithRed:200.0/255.0 green:0.0/255.0 blue:170.0/255.0 alpha:1.0];
-	UIColor *colorFive=[UIColor colorWithRed:255.0/255.0 green:247.0/255.0 blue:127.0/255.0 alpha:1.0];
-	UIColor *colorBorder=[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
+	UIColor *colorFour=[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
+	UIColor *colorFive=[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:1.0];
 	
-	textureOne=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorOne, colorBorder);
-	textureTwo=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorTwo, colorBorder);
-	textureThree=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorThree, colorBorder);
-	textureFour=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorFour, colorBorder);
-	textureFive=makeRoundedRectWithBorder(50.0f, 50.0f, 10.0f, colorFive, colorBorder);
+	UIColor *colorBorder=[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
+	
+	textureOne=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorOne, colorBorder);
+	textureTwo=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorTwo, colorBorder);
+	textureThree=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorThree, colorBorder);
+	textureFour=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorFour, colorBorder);
+	textureFive=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorFive, colorBorder);
 }
 
 -(void)renderDefault:(int)value

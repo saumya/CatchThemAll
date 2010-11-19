@@ -65,38 +65,38 @@
 	self.displayScore=[SPTextField textFieldWithWidth:100 
 											   height:20 
 												 text:[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",000]] 
-											 fontName:@"Helvetica" 
+											 fontName:@"AppleGothic" 
 											 fontSize:15 
-												color:0xAAAAAA];
+												color:0x00fcff];
 	
 	
 	self.displayMiss=[SPTextField textFieldWithWidth:100 
 											  height:20 
 												text:[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",000]] 
-											fontName:@"Helvetica" 
+											fontName:@"AppleGothic" 
 											fontSize:15 
-												color:0xAAAAAA];
+												color:0x00fcff];
 	
 	self.displayTotalAttempted=[SPTextField textFieldWithWidth:320 
 														height:20 
 														  text:[NSString stringWithString:[NSString stringWithFormat:@"Attempts : %i",000]] 
-													  fontName:@"Helvetica" 
+													  fontName:@"AppleGothic" 
 													  fontSize:15 
-														 color:0xAAAAAA];
+														 color:0x00fcff];
 	
 	self.displayTimer=[SPTextField textFieldWithWidth:320 
 											   height:20 
 												 text:[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",000]] 
-											 fontName:@"Helvetica" 
+											 fontName:@"Courier-Bold" 
 											 fontSize:15 
-												color:0xAAAAAA];
+												color:0x00fcff];
 	self.displayScore.x=00;
 	self.displayScore.y=20;
 	[self addChild:displayScore];
 	self.displayMiss.x=200;
 	self.displayMiss.y=20;
 	[self addChild:displayMiss];
-	self.displayTotalAttempted.x=10;
+	self.displayTotalAttempted.x=0;
 	self.displayTotalAttempted.y=5;
 	[self addChild:displayTotalAttempted];
 	
@@ -106,7 +106,7 @@
 	
 	
 	//makes the background
-	UIColor *bgFill=[UIColor colorWithRed:0.0/255.0 green:80.0/255.0 blue:142.0/255.0 alpha:1.0];
+	UIColor *bgFill=[UIColor colorWithRed:0.0/255.0 green:73.0/255.0 blue:97.0/255.0 alpha:1.0];
 	UIColor *bgBorder=[UIColor colorWithRed:134.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
 	SPTexture *bgTexture=makeRoundedRectWithBorder(320.0f, 480.0f, 40.0f, bgFill, bgBorder);
 	SPImage *bg=[SPImage imageWithTexture:bgTexture];
