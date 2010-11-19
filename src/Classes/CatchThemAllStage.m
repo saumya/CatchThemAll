@@ -272,7 +272,7 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
-
+		/*
 		//transition for the question change
 		if (areOptionsOnScreen) {
 			[self transitOut];
@@ -280,6 +280,9 @@
 		}else {
 			//[self transitIn];
 		}
+		*/
+		[self transitOut];
+		self.areOptionsOnScreen=FALSE;
 	}else if (touches.count==2) {
 		NSLog(@"2 fingure touch : ----------- ");
 		if (correctAnswerNum==2) {
@@ -289,6 +292,8 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
+		[self transitOut];
+		self.areOptionsOnScreen=FALSE;
 	}else if (touches.count==3) {
 		if (correctAnswerNum==3) {
 			NSLog(@"CORRECT RESPONSE : ");
@@ -297,6 +302,8 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
+		[self transitOut];
+		self.areOptionsOnScreen=FALSE;
 	}else if (correctAnswerNum==4) {
 		if (correctAnswerNum==4) {
 			NSLog(@"CORRECT RESPONSE : ");
@@ -305,6 +312,8 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
+		[self transitOut];
+		self.areOptionsOnScreen=FALSE;
 	}else if (correctAnswerNum==5) {
 		if (correctAnswerNum==5) {
 			NSLog(@"CORRECT RESPONSE : ");
@@ -313,6 +322,8 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
+		[self transitOut];
+		self.areOptionsOnScreen=FALSE;
 	}
 	}
 
