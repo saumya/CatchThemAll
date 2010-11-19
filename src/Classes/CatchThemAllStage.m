@@ -32,6 +32,16 @@
 @synthesize counter5;
 @synthesize correctAnswerNum;
 
+@synthesize userCorrectAnswerCount;
+@synthesize userWrongAnswerCount;
+@synthesize displayScore;
+@synthesize displayMiss;
+@synthesize displayTotalAttempted;
+@synthesize timerCounter;
+@synthesize displayTimer;
+
+
+
 - (id)initWithWidth:(float)width height:(float)height
 {
 	if (self=[super init]) 
@@ -46,7 +56,55 @@
 
 -(void)renderDefaultScreen
 {
-	self.areOptionsOnScreen=FALSE;	
+	//initalises the values
+	userWrongAnswerCount=0;
+	userCorrectAnswerCount=0;
+	self.areOptionsOnScreen=FALSE;
+	//initalises score board
+	timerCounter=0;
+	self.displayScore=[SPTextField textFieldWithWidth:100 
+											   height:20 
+												 text:[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",000]] 
+											 fontName:@"Helvetica" 
+											 fontSize:15 
+												color:0xAAAAAA];
+	
+	
+	self.displayMiss=[SPTextField textFieldWithWidth:100 
+											  height:20 
+												text:[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",000]] 
+											fontName:@"Helvetica" 
+											fontSize:15 
+												color:0xAAAAAA];
+	
+	self.displayTotalAttempted=[SPTextField textFieldWithWidth:320 
+														height:20 
+														  text:[NSString stringWithString:[NSString stringWithFormat:@"Attempts : %i",000]] 
+													  fontName:@"Helvetica" 
+													  fontSize:15 
+														 color:0xAAAAAA];
+	
+	self.displayTimer=[SPTextField textFieldWithWidth:320 
+											   height:20 
+												 text:[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",000]] 
+											 fontName:@"Helvetica" 
+											 fontSize:15 
+												color:0xAAAAAA];
+	self.displayScore.x=00;
+	self.displayScore.y=20;
+	[self addChild:displayScore];
+	self.displayMiss.x=200;
+	self.displayMiss.y=20;
+	[self addChild:displayMiss];
+	self.displayTotalAttempted.x=10;
+	self.displayTotalAttempted.y=5;
+	[self addChild:displayTotalAttempted];
+	
+	self.displayTimer.x=000;
+	self.displayTimer.y=450;
+	[self addChild:displayTimer];
+	
+	
 	//makes the background
 	UIColor *bgFill=[UIColor colorWithRed:0.0/255.0 green:80.0/255.0 blue:142.0/255.0 alpha:1.0];
 	UIColor *bgBorder=[UIColor colorWithRed:134.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
@@ -65,6 +123,16 @@
 	//makes width and height 1, so as to animate in the beginning to the full value 
 	//background.width=1;
 	//background.height=1;
+	//bring the score to top
+	[self removeChild:displayScore];
+	[self removeChild:displayMiss];
+	[self removeChild:displayTotalAttempted];
+	[self removeChild:displayTimer];
+	
+	[self addChild:displayScore];
+	[self addChild:displayMiss];
+	[self addChild:displayTotalAttempted];
+	[self addChild:displayTimer];
 	
 	//
 	//The options
@@ -142,6 +210,11 @@
 		//[self updateRows];
 	}
 	*/
+	self.timerCounter++;
+	self.displayTimer.text=[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",timerCounter]];
+	self.displayScore.text=[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",userCorrectAnswerCount]];
+	self.displayMiss.text=[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",userWrongAnswerCount]];
+	self.displayTotalAttempted.text=[NSString stringWithString:[NSString stringWithFormat:@"Attempts : %i",(userCorrectAnswerCount+userWrongAnswerCount)]];
 
 	//update Juggler
 	double passedTime=event.passedTime;
@@ -191,11 +264,13 @@
 		//
 		if (correctAnswerNum==1) {
 			NSLog(@"CORRECT RESPONSE : ");
+			self.userCorrectAnswerCount++;
 		}else {
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			self.userWrongAnswerCount++;
 		}
 
-		//
+		//transition for the question change
 		if (areOptionsOnScreen) {
 			[self transitOut];
 		}else {
@@ -205,28 +280,37 @@
 		NSLog(@"2 fingure touch : ----------- ");
 		if (correctAnswerNum==2) {
 			NSLog(@"CORRECT RESPONSE : ");
+			self.userCorrectAnswerCount++;
 		}else {
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			self.userWrongAnswerCount++;
 		}
 	}else if (touches.count==3) {
 		if (correctAnswerNum==3) {
 			NSLog(@"CORRECT RESPONSE : ");
+			self.userCorrectAnswerCount++;
 		}else {
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			self.userWrongAnswerCount++;
 		}
 	}else if (correctAnswerNum==4) {
 		if (correctAnswerNum==4) {
 			NSLog(@"CORRECT RESPONSE : ");
+			self.userCorrectAnswerCount++;
 		}else {
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			self.userWrongAnswerCount++;
 		}
 	}else if (correctAnswerNum==5) {
 		if (correctAnswerNum==5) {
 			NSLog(@"CORRECT RESPONSE : ");
+			self.userCorrectAnswerCount++;
 		}else {
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
+			self.userWrongAnswerCount++;
 		}
 	}
+
 }
 
 -(void)transitIn
@@ -423,6 +507,8 @@
 {
 	NSLog(@"onTransitionInComplete : all complete!");
 	areOptionsOnScreen=TRUE;
+	//reset timer
+	self.timerCounter=0;
 }
 -(void)onTransitionOutComplete:(SPEvent *)event
 {
@@ -509,6 +595,11 @@
 	[rowSix release];
 	[rowSeven release];
 	[rowEight release];
+	
+	[displayScore release];
+	[displayMiss release];
+	[displayTotalAttempted release];
+	[displayTimer release];
 	
 	[super dealloc];
 }

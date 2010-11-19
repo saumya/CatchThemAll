@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,7 +277,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
+									<integer>10</integer>
 									<integer>5</integer>
 									<integer>4</integer>
 									<integer>0</integer>
@@ -316,12 +314,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CTASprite.m</string>
+								<string>CatchThemAllStage.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,17 +329,18 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CTASprite.m</string>
+										<string>CatchThemAllStage.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>99A6C011129627FF00D79E86</string>
+										<string>99A6C09F1296625D00D79E86</string>
 										<key>history</key>
 										<array>
-											<string>99D59B3C1295E35100EA60B2</string>
-											<string>99D59B3D1295E35100EA60B2</string>
-											<string>99D59B881295E9B200EA60B2</string>
-											<string>99D59B8A1295E9B200EA60B2</string>
+											<string>99A6C03F1296582700D79E86</string>
+											<string>99A6C0401296582700D79E86</string>
+											<string>99A6C0421296582700D79E86</string>
+											<string>99A6C08912965EB300D79E86</string>
+											<string>99A6C09B129661A200D79E86</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -539,8 +540,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>990F9A0B128FA860009D7656</string>
-		<string>/Users/saumyaray/devHome/iApps/gamesOn_GitHub/CatchThemAll/src/CatchThemAll.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/saumyaray/devHome/iApps/gamesOn_GitHub/CatchThemAll/src/CatchThemAll.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>96 112 1117 666 0 0 1280 778 </string>

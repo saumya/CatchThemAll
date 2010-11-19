@@ -37,6 +37,15 @@
 	int counter4;
 	int counter5;
 	int correctAnswerNum;
+	
+	int userCorrectAnswerCount;
+	int userWrongAnswerCount;
+	SPTextField *displayScore;
+	SPTextField *displayMiss;
+	SPTextField *displayTotalAttempted;
+	
+	int timerCounter;
+	SPTextField *displayTimer;
 }
 
 @property (nonatomic, retain) SPJuggler *mJuggler;
@@ -59,6 +68,14 @@
 @property (nonatomic, assign) int counter4;
 @property (nonatomic, assign) int counter5;
 @property (nonatomic, assign) int correctAnswerNum;
+
+@property (nonatomic, assign) int userCorrectAnswerCount;
+@property (nonatomic, assign) int userWrongAnswerCount;
+@property (nonatomic, retain) SPTextField *displayScore;
+@property (nonatomic, retain) SPTextField *displayMiss;
+@property (nonatomic, retain) SPTextField *displayTotalAttempted;
+@property (nonatomic, assign) int timerCounter;
+@property (nonatomic, retain) SPTextField *displayTimer;
 
 - (id)initWithWidth:(float)width height:(float)height;
 
