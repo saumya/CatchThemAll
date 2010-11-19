@@ -210,7 +210,16 @@
 		//[self updateRows];
 	}
 	*/
-	self.timerCounter++;
+	if (areOptionsOnScreen) {
+		self.timerCounter++;
+		//check and move to next question in case timeout
+		if (self.timerCounter>=1000) {
+			self.userWrongAnswerCount++;
+			[self transitOut];
+			self.areOptionsOnScreen=FALSE;
+		}
+	}
+	//self.timerCounter++;
 	self.displayTimer.text=[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",timerCounter]];
 	self.displayScore.text=[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",userCorrectAnswerCount]];
 	self.displayMiss.text=[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",userWrongAnswerCount]];
