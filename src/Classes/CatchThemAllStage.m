@@ -259,6 +259,9 @@
 - (void)onUserTouch:(SPTouchEvent*)event
 {	
 	NSArray *touches = [[event touchesWithTarget:self andPhase:SPTouchPhaseBegan] allObjects];
+	if (areOptionsOnScreen) {
+		
+	
 	if (touches.count==1) {
 		NSLog(@"1 fingure touch : ----------- ");
 		//
@@ -273,6 +276,7 @@
 		//transition for the question change
 		if (areOptionsOnScreen) {
 			[self transitOut];
+			self.areOptionsOnScreen=FALSE;
 		}else {
 			//[self transitIn];
 		}
@@ -309,6 +313,7 @@
 			NSLog(@"xxxxxxxx WRONG xxxxxxxx");
 			self.userWrongAnswerCount++;
 		}
+	}
 	}
 
 }
