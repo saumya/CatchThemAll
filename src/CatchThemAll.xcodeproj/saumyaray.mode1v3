@@ -277,9 +277,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
-									<integer>5</integer>
-									<integer>4</integer>
+									<integer>27</integer>
+									<integer>26</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>28</integer>
+									<integer>26</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -303,7 +307,7 @@
 							<real>218</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>96 112 1117 666 0 0 1280 778 </string>
+						<string>245 109 1117 666 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -321,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InstructionSprite.m</string>
+								<string>CatchThemAllStage.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InstructionSprite.m</string>
+										<string>CatchThemAllStage.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>99B902F81297318300650E84</string>
+										<string>99B9032A12974F3300650E84</string>
 										<key>history</key>
 										<array>
 											<string>99A6C03F1296582700D79E86</string>
@@ -347,8 +351,9 @@
 											<string>99B902BA12972A5200650E84</string>
 											<string>99B902BB12972A5200650E84</string>
 											<string>99B902C912972DDC00650E84</string>
+											<string>99B9032812974F3300650E84</string>
+											<string>99B9032912974F3300650E84</string>
 											<string>99B902E312972F4A00650E84</string>
-											<string>99B902E412972F4A00650E84</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -360,14 +365,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {877, 500}}</string>
+								<string>{{0, 0}, {877, 496}}</string>
 								<key>RubberWindowFrame</key>
-								<string>96 112 1117 666 0 0 1280 778 </string>
+								<string>245 109 1117 666 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>500pt</string>
+							<string>496pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -380,14 +385,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 505}, {877, 120}}</string>
+								<string>{{0, 501}, {877, 124}}</string>
 								<key>RubberWindowFrame</key>
-								<string>96 112 1117 666 0 0 1280 778 </string>
+								<string>245 109 1117 666 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>120pt</string>
+							<string>124pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -406,9 +411,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>99B901ED1297092200650E84</string>
+				<string>99B9031B1297431B00650E84</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>99B901EE1297092200650E84</string>
+				<string>99B9031C1297431B00650E84</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -546,13 +551,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>990F9A0B128FA860009D7656</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/saumyaray/devHome/iApps/gamesOn_GitHub/CatchThemAll/src/CatchThemAll.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>96 112 1117 666 0 0 1280 778 </string>
+	<string>245 109 1117 666 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -629,7 +634,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>990F9A0B128FA860009D7656</string>
-				<string>99B901EF1297092200650E84</string>
+				<string>99B9031D1297431B00650E84</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -751,13 +756,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>99B901F01297092200650E84</string>
+				<string>99B9032B12974F3300650E84</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>99B901F11297092200650E84</string>
-				<string>99B901F21297092200650E84</string>
-				<string>99B901F31297092200650E84</string>
-				<string>99B901F41297092200650E84</string>
-				<string>99B901F51297092200650E84</string>
+				<string>99B9032C12974F3300650E84</string>
+				<string>99B9032D12974F3300650E84</string>
+				<string>99B9032E12974F3300650E84</string>
+				<string>99B9032F12974F3300650E84</string>
+				<string>99B9033012974F3300650E84</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -876,8 +881,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -913,7 +916,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>99B901F61297092200650E84</string>
+				<string>99B9033112974F3300650E84</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -923,7 +926,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
