@@ -55,10 +55,15 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 311902995;
-			PBXWorkspaceStateSaveDate = 311902995;
+			PBXPerProjectTemplateStateSaveDate = 311935973;
+			PBXWorkspaceStateSaveDate = 311935973;
 		};
 		perUserProjectItems = {
+			9999A2D51297C478001312FB /* PBXBookmark */ = 9999A2D51297C478001312FB /* PBXBookmark */;
+			9999A2D61297C478001312FB /* PBXBookmark */ = 9999A2D61297C478001312FB /* PBXBookmark */;
+			9999A2D71297C478001312FB /* PBXBookmark */ = 9999A2D71297C478001312FB /* PBXBookmark */;
+			9999A2D81297C478001312FB /* PBXTextBookmark */ = 9999A2D81297C478001312FB /* PBXTextBookmark */;
+			9999A2D91297C478001312FB /* PBXTextBookmark */ = 9999A2D91297C478001312FB /* PBXTextBookmark */;
 			99A6532E1296857D0007F230 /* PBXTextBookmark */ = 99A6532E1296857D0007F230 /* PBXTextBookmark */;
 			99A6537312969A860007F230 /* PBXTextBookmark */ = 99A6537312969A860007F230 /* PBXTextBookmark */;
 			99A654161296A63A0007F230 /* PBXTextBookmark */ = 99A654161296A63A0007F230 /* PBXTextBookmark */;
@@ -70,10 +75,7 @@
 			99B902BA12972A5200650E84 /* PBXTextBookmark */ = 99B902BA12972A5200650E84 /* PBXTextBookmark */;
 			99B902BB12972A5200650E84 /* PBXTextBookmark */ = 99B902BB12972A5200650E84 /* PBXTextBookmark */;
 			99B902C912972DDC00650E84 /* PBXTextBookmark */ = 99B902C912972DDC00650E84 /* PBXTextBookmark */;
-			99B902E312972F4A00650E84 /* PBXTextBookmark */ = 99B902E312972F4A00650E84 /* PBXTextBookmark */;
 			99B9032812974F3300650E84 /* PBXTextBookmark */ = 99B9032812974F3300650E84 /* PBXTextBookmark */;
-			99B9032912974F3300650E84 /* PBXBookmark */ = 99B9032912974F3300650E84 /* PBXBookmark */;
-			99B9032A12974F3300650E84 /* PBXTextBookmark */ = 99B9032A12974F3300650E84 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 990F9A0D128FA861009D7656 /* Source Control */;
 		userBuildSettings = {
@@ -137,9 +139,9 @@
 	};
 	990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {816, 9217}}";
+			sepNavIntBoundsRect = "{{0, 0}, {816, 9347}}";
 			sepNavSelRange = "{6099, 0}";
-			sepNavVisRange = "{5879, 1019}";
+			sepNavVisRange = "{5879, 998}";
 			sepNavWindowFrame = "{{15, 151}, {1058, 622}}";
 		};
 	};
@@ -185,6 +187,38 @@
 			sepNavSelRange = "{945, 0}";
 			sepNavVisRange = "{322, 920}";
 		};
+	};
+	9999A2D51297C478001312FB /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 99B9031E1297436300650E84 /* Icon.png */;
+	};
+	9999A2D61297C478001312FB /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 9999A2CF1297C409001312FB /* Default@2x.png */;
+	};
+	9999A2D71297C478001312FB /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 9999A2CE1297C409001312FB /* Default.png */;
+	};
+	9999A2D81297C478001312FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */;
+		name = "CatchThemAllStage.m: 217";
+		rLen = 0;
+		rLoc = 6099;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 5879;
+	};
+	9999A2D91297C478001312FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */;
+		name = "CatchThemAllStage.m: 217";
+		rLen = 0;
+		rLoc = 6099;
+		rType = 0;
+		vrLen = 998;
+		vrLoc = 5879;
 	};
 	99A6532E1296857D0007F230 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -331,16 +365,6 @@
 		vrLen = 709;
 		vrLoc = 0;
 	};
-	99B902E312972F4A00650E84 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */;
-		name = "CatchThemAllStage.m: 231";
-		rLen = 0;
-		rLoc = 6534;
-		rType = 0;
-		vrLen = 945;
-		vrLoc = 5932;
-	};
 	99B9032812974F3300650E84 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 99A65369129697A00007F230 /* InstructionSprite.m */;
@@ -350,20 +374,6 @@
 		rType = 0;
 		vrLen = 1672;
 		vrLoc = 2451;
-	};
-	99B9032912974F3300650E84 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 99B9031E1297436300650E84 /* Icon.png */;
-	};
-	99B9032A12974F3300650E84 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 990F9A74128FAE4C009D7656 /* CatchThemAllStage.m */;
-		name = "CatchThemAllStage.m: 217";
-		rLen = 0;
-		rLoc = 6099;
-		rType = 0;
-		vrLen = 1019;
-		vrLoc = 5879;
 	};
 	99D5996512954CC500EA60B2 /* SaumyaEvent.h */ = {
 		uiCtxt = {
