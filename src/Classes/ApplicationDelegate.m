@@ -17,6 +17,8 @@
     {
         mWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         mSparrowView = [[SPView alloc] initWithFrame:mWindow.bounds]; 
+		//enabling multitouch
+		mSparrowView.multipleTouchEnabled=YES;
         [mWindow addSubview:mSparrowView];
     }
     return self;
