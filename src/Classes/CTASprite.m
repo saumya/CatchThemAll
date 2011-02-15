@@ -91,7 +91,7 @@
 	//NSLog(@"arc4random() : %i",1+arc4random()%5);
 	int value=0;
 	value=1+arc4random()%5;
-	
+	/*
 	if (value==1) {
 		SPImage *textureImage=[SPImage imageWithTexture:self.textureOne];
 		[self addImage:textureImage];
@@ -111,7 +111,20 @@
 		SPImage *textureImage=[SPImage imageWithTexture:self.textureTwo];
 		[self addImage:textureImage];
 	}
-	
+	*/
+	if (value==1) {
+		self.img.texture=self.textureOne;
+	}else if (value==2) {
+		self.img.texture=self.textureTwo;
+	}else if (value==3) {
+		self.img.texture=self.textureThree;
+	}else if (value==4) {
+		self.img.texture=self.textureFour;
+	}else if (value==5) {
+		self.img.texture=self.textureFive;
+	}else {
+		self.img.texture=self.textureTwo;
+	}
 	
 	SaumyaEvent *evt=[[SaumyaEvent alloc] initWithType:EVENT_VALUE_REFRESHED 
 											   bubbles:TRUE];

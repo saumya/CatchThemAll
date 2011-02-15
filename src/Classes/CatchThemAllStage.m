@@ -323,7 +323,12 @@
 
 - (void)onUserTouch:(SPTouchEvent*)event
 {	
-	NSArray *touches = [[event touchesWithTarget:self andPhase:SPTouchPhaseBegan] allObjects];
+	//NSArray *touches = [[event touchesWithTarget:self andPhase:SPTouchPhaseBegan] allObjects];
+	NSArray *touches=[[event touchesWithTarget:self] allObjects];
+	if ([event touchesWithTarget:self andPhase:SPTouchPhaseEnded].count==0) {
+		return;
+	}
+	
 	if (areOptionsOnScreen) {
 		
 	
