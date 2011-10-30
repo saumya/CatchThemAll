@@ -16,16 +16,16 @@
 #import "SaumyaEvent.h"
 
 
-@interface CatchThemAllStage : SPSprite 
+@interface CatchThemAllStage : SPSprite
 {
 	SPJuggler *mJuggler;
 	CTASprite *background;
 	Boolean areOptionsOnScreen;
 	int transitionAnimationCounter;
-	
+
 	InstructionSprite *infoSprite;
 	Boolean isInstructionVisible;
-	
+
 	CTARow *rowOne;
 	CTARow *rowTwo;
 	CTARow *rowThree;
@@ -34,20 +34,20 @@
 	CTARow *rowSix;
 	CTARow *rowSeven;
 	CTARow *rowEight;
-	
+
 	int counter1;
 	int counter2;
 	int counter3;
 	int counter4;
 	int counter5;
 	int correctAnswerNum;
-	
+
 	int userCorrectAnswerCount;
 	int userWrongAnswerCount;
 	SPTextField *displayScore;
 	SPTextField *displayMiss;
 	SPTextField *displayTotalAttempted;
-	
+
 	int timerCounter;
 	SPTextField *displayTimer;
 }

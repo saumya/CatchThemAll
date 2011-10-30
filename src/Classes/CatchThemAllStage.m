@@ -47,7 +47,7 @@
 
 - (id)initWithWidth:(float)width height:(float)height
 {
-	if (self=[super init]) 
+	if (self=[super init])
 	{
 		//Custom code
 		//let the game begin :)
@@ -63,40 +63,40 @@
 	infoSprite=[[InstructionSprite alloc]initWithInstruction];
 	[self addChild:infoSprite];
 	self.isInstructionVisible=TRUE;
-	
+
 	//initalises the values
 	userWrongAnswerCount=0;
 	userCorrectAnswerCount=0;
 	self.areOptionsOnScreen=FALSE;
 	//initalises score board
 	timerCounter=0;
-	self.displayScore=[SPTextField textFieldWithWidth:100 
-											   height:20 
-												 text:[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",000]] 
-											 fontName:@"AppleGothic" 
-											 fontSize:15 
+	self.displayScore=[SPTextField textFieldWithWidth:100
+											   height:20
+												 text:[NSString stringWithString:[NSString stringWithFormat:@"Scored : %i",000]]
+											 fontName:@"AppleGothic"
+											 fontSize:15
 												color:0x00fcff];
-	
-	
-	self.displayMiss=[SPTextField textFieldWithWidth:100 
-											  height:20 
-												text:[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",000]] 
-											fontName:@"AppleGothic" 
-											fontSize:15 
+
+
+	self.displayMiss=[SPTextField textFieldWithWidth:100
+											  height:20
+												text:[NSString stringWithString:[NSString stringWithFormat:@"Missed : %i",000]]
+											fontName:@"AppleGothic"
+											fontSize:15
 												color:0x00fcff];
-	
-	self.displayTotalAttempted=[SPTextField textFieldWithWidth:320 
-														height:20 
-														  text:[NSString stringWithString:[NSString stringWithFormat:@"Attempts : %i",000]] 
-													  fontName:@"AppleGothic" 
-													  fontSize:15 
+
+	self.displayTotalAttempted=[SPTextField textFieldWithWidth:320
+														height:20
+														  text:[NSString stringWithString:[NSString stringWithFormat:@"Attempts : %i",000]]
+													  fontName:@"AppleGothic"
+													  fontSize:15
 														 color:0x00fcff];
-	
-	self.displayTimer=[SPTextField textFieldWithWidth:320 
-											   height:20 
-												 text:[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",000]] 
-											 fontName:@"Courier-Bold" 
-											 fontSize:15 
+
+	self.displayTimer=[SPTextField textFieldWithWidth:320
+											   height:20
+												 text:[NSString stringWithString:[NSString stringWithFormat:@"Counter : %i",000]]
+											 fontName:@"Courier-Bold"
+											 fontSize:15
 												color:0x00fcff];
 	self.displayScore.x=00;
 	self.displayScore.y=20;
@@ -107,12 +107,12 @@
 	self.displayTotalAttempted.x=0;
 	self.displayTotalAttempted.y=5;
 	[self addChild:displayTotalAttempted];
-	
+
 	self.displayTimer.x=000;
 	self.displayTimer.y=450;
 	[self addChild:displayTimer];
-	
-	
+
+
 	//makes the background
 	UIColor *bgFill=[UIColor colorWithRed:0.0/255.0 green:73.0/255.0 blue:97.0/255.0 alpha:1.0];
 	UIColor *bgBorder=[UIColor colorWithRed:134.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
@@ -128,7 +128,7 @@
 	background.y=background.height/2;
 	//add to the display list
 	[self addChild:background];
-	//makes width and height 1, so as to animate in the beginning to the full value 
+	//makes width and height 1, so as to animate in the beginning to the full value
 	//background.width=1;
 	//background.height=1;
 	//bring the score to top
@@ -136,12 +136,12 @@
 	[self removeChild:displayMiss];
 	[self removeChild:displayTotalAttempted];
 	[self removeChild:displayTimer];
-	
+
 	[self addChild:displayScore];
 	[self addChild:displayMiss];
 	[self addChild:displayTotalAttempted];
 	[self addChild:displayTimer];
-	
+
 	//
 	//The options
 	//makes the row of options
@@ -183,33 +183,33 @@
 	rowEight.y=rowSeven.y+50;
 	//
 	self.mJuggler=[SPJuggler juggler];
-	
+
 	//listen for skip info event to start the game
-	[self addEventListener:@selector(onSkipInfo:) 
-				  atObject:self 
+	[self addEventListener:@selector(onSkipInfo:)
+				  atObject:self
 				   forType:EVENT_SKIP_INFO];
- 	
+
 	//Initialising the run loop
-	[self addEventListener:@selector(onEachFrame:) 
-				  atObject:self 
+	[self addEventListener:@selector(onEachFrame:)
+				  atObject:self
 				   forType:SP_EVENT_TYPE_ENTER_FRAME];
 	/*
-	[self.infoSprite addEventListener:@selector(onUserTouchInfo:) 
-				  atObject:self 
+	[self.infoSprite addEventListener:@selector(onUserTouchInfo:)
+				  atObject:self
 				   forType:SP_EVENT_TYPE_TOUCH];
 	*/
 	/*
-	 [self addEventListener:@selector(onUserTouch:) 
-				  atObject:self 
+	 [self addEventListener:@selector(onUserTouch:)
+				  atObject:self
 				   forType:SP_EVENT_TYPE_TOUCH];
-	[self addEventListener:@selector(onTransitionInComplete:) 
-				  atObject:self 
+	[self addEventListener:@selector(onTransitionInComplete:)
+				  atObject:self
 				   forType:EVENT_TYPE_TRANSITION_IN_TWEEN_END];
-	[self addEventListener:@selector(onTransitionOutComplete:) 
-				  atObject:self 
+	[self addEventListener:@selector(onTransitionOutComplete:)
+				  atObject:self
 				   forType:EVENT_TYPE_TRANSITION_OUT_TWEEN_END];
-	[self addEventListener:@selector(onOptionRefresh:) 
-				  atObject:self 
+	[self addEventListener:@selector(onOptionRefresh:)
+				  atObject:self
 				   forType:EVENT_VALUE_REFRESHED];
 	*/
 	 //action time
@@ -222,8 +222,8 @@
 	//animate the info screen
 	infoSprite.scaleX=0.1;
 	infoSprite.scaleY=0.1;
-	SPTween *infoTween=[SPTween tweenWithTarget:infoSprite 
-											 time:2.4 
+	SPTween *infoTween=[SPTween tweenWithTarget:infoSprite
+											 time:2.4
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
 	[infoTween animateProperty:@"scaleX" targetValue:1.0];
 	[infoTween animateProperty:@"scaleY" targetValue:1.0];
@@ -235,31 +235,31 @@
 {
 	//Initialising the handlers
 	/*
-	[self addEventListener:@selector(onEachFrame:) 
-				  atObject:self 
+	[self addEventListener:@selector(onEachFrame:)
+				  atObject:self
 				   forType:SP_EVENT_TYPE_ENTER_FRAME];
 	*/
-	[self addEventListener:@selector(onUserTouch:) 
-				  atObject:self 
+	[self addEventListener:@selector(onUserTouch:)
+				  atObject:self
 				   forType:SP_EVENT_TYPE_TOUCH];
-	[self addEventListener:@selector(onTransitionInComplete:) 
-				  atObject:self 
+	[self addEventListener:@selector(onTransitionInComplete:)
+				  atObject:self
 				   forType:EVENT_TYPE_TRANSITION_IN_TWEEN_END];
-	[self addEventListener:@selector(onTransitionOutComplete:) 
-				  atObject:self 
+	[self addEventListener:@selector(onTransitionOutComplete:)
+				  atObject:self
 				   forType:EVENT_TYPE_TRANSITION_OUT_TWEEN_END];
-	[self addEventListener:@selector(onOptionRefresh:) 
-				  atObject:self 
+	[self addEventListener:@selector(onOptionRefresh:)
+				  atObject:self
 				   forType:EVENT_VALUE_REFRESHED];
 }
 
 -(void)onSkipInfo:(SaumyaEvent *)event
 {
 	[self removeChild:infoSprite];
-	
+
 	self.infoSprite.visible=FALSE;
 	self.isInstructionVisible=FALSE;
-	
+
 	[self transitOut];
 	[self activateGame];
 }
@@ -297,13 +297,13 @@
 	NSLog(@"Tween Completed. %@",event.target);
 	/*
 	SPTween *t=event.target;
-	[t removeEventListener:@selector(onTweenCompleted:) 
-						   atObject:self 
+	[t removeEventListener:@selector(onTweenCompleted:)
+						   atObject:self
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
 	*/
 	/*
-	[t addEventListener:@selector(onTweenCompleted:) 
-						   atObject:self 
+	[t addEventListener:@selector(onTweenCompleted:)
+						   atObject:self
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
 	*/
 }
@@ -315,23 +315,23 @@
 		NSLog(@"READY ! Start the game !");
 		self.infoSprite.visible=FALSE;
 		self.isInstructionVisible=FALSE;
-		
+
 		[self transitOut];
 		[self activateGame];
 	}
 }
 
 - (void)onUserTouch:(SPTouchEvent*)event
-{	
+{
 	//NSArray *touches = [[event touchesWithTarget:self andPhase:SPTouchPhaseBegan] allObjects];
 	NSArray *touches=[[event touchesWithTarget:self] allObjects];
 	if ([event touchesWithTarget:self andPhase:SPTouchPhaseEnded].count==0) {
 		return;
 	}
-	
+
 	if (areOptionsOnScreen) {
-		
-	
+
+
 	if (touches.count==1) {
 		//NSLog(@"1 fingure touch : ----------- ");
 		//
@@ -403,11 +403,11 @@
 {
 	NSLog(@"transitIn");
 	/*
-	//makes width and height 1, so as to animate in the beginning to the full value 
+	//makes width and height 1, so as to animate in the beginning to the full value
 	background.width=1;
 	background.height=1;
-	SPTween *bgTween=[SPTween tweenWithTarget:background 
-										 time:0.8 
+	SPTween *bgTween=[SPTween tweenWithTarget:background
+										 time:0.8
 								   transition:SP_TRANSITION_EASE_OUT_BACK];
 	[bgTween animateProperty:@"width" targetValue:310];
 	[bgTween animateProperty:@"height" targetValue:470];
@@ -416,29 +416,29 @@
 	[rowOne updateSpriteData:2];
 	[rowTwo updateSpriteData:5];
 	*/
-	SPTween *rowOneTween=[SPTween tweenWithTarget:rowOne 
-											 time:1.4 
+	SPTween *rowOneTween=[SPTween tweenWithTarget:rowOne
+											 time:1.4
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowTwoTween=[SPTween tweenWithTarget:rowTwo 
-											 time:1.0 
+	SPTween *rowTwoTween=[SPTween tweenWithTarget:rowTwo
+											 time:1.0
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowThreeTween=[SPTween tweenWithTarget:rowThree 
-											   time:1.2 
+	SPTween *rowThreeTween=[SPTween tweenWithTarget:rowThree
+											   time:1.2
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowFourTween=[SPTween tweenWithTarget:rowFour 
-											  time:1.1 
+	SPTween *rowFourTween=[SPTween tweenWithTarget:rowFour
+											  time:1.1
 										transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowFiveTween=[SPTween tweenWithTarget:rowFive 
-											  time:0.8 
+	SPTween *rowFiveTween=[SPTween tweenWithTarget:rowFive
+											  time:0.8
 										transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowSixTween=[SPTween tweenWithTarget:rowSix 
-											 time:1.3 
+	SPTween *rowSixTween=[SPTween tweenWithTarget:rowSix
+											 time:1.3
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowSevenTween=[SPTween tweenWithTarget:rowSeven 
-											   time:1.1 
+	SPTween *rowSevenTween=[SPTween tweenWithTarget:rowSeven
+											   time:1.1
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowEightTween=[SPTween tweenWithTarget:rowEight 
-											   time:1.2 
+	SPTween *rowEightTween=[SPTween tweenWithTarget:rowEight
+											   time:1.2
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
 	//
 	[rowOneTween animateProperty:@"x" targetValue:10];
@@ -450,31 +450,31 @@
 	[rowSevenTween animateProperty:@"x" targetValue:10];
 	[rowEightTween animateProperty:@"x" targetValue:10];
 	//
-	[rowOneTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowOneTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowTwoTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowTwoTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowThreeTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowThreeTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowFourTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowFourTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowFiveTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowFiveTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowSixTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowSixTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowSevenTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowSevenTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowEightTween addEventListener:@selector(onSingleTransitionInComplete:) 
-						 atObject:self 
+	[rowEightTween addEventListener:@selector(onSingleTransitionInComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	
+
 	//[mJuggler addObject:bgTween];
 	[mJuggler addObject:rowOneTween];
 	[mJuggler addObject:rowTwoTween];
@@ -489,29 +489,29 @@
 -(void)transitOut
 {
 	NSLog(@"transitOut");
-	SPTween *rowOneTween=[SPTween tweenWithTarget:rowOne 
-											 time:1.4 
+	SPTween *rowOneTween=[SPTween tweenWithTarget:rowOne
+											 time:1.4
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowTwoTween=[SPTween tweenWithTarget:rowTwo 
-											 time:1.0 
+	SPTween *rowTwoTween=[SPTween tweenWithTarget:rowTwo
+											 time:1.0
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowThreeTween=[SPTween tweenWithTarget:rowThree 
-											   time:1.2 
+	SPTween *rowThreeTween=[SPTween tweenWithTarget:rowThree
+											   time:1.2
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowFourTween=[SPTween tweenWithTarget:rowFour 
-											  time:1.1 
+	SPTween *rowFourTween=[SPTween tweenWithTarget:rowFour
+											  time:1.1
 										transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowFiveTween=[SPTween tweenWithTarget:rowFive 
-											  time:0.8 
+	SPTween *rowFiveTween=[SPTween tweenWithTarget:rowFive
+											  time:0.8
 										transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowSixTween=[SPTween tweenWithTarget:rowSix 
-											 time:1.3 
+	SPTween *rowSixTween=[SPTween tweenWithTarget:rowSix
+											 time:1.3
 									   transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowSevenTween=[SPTween tweenWithTarget:rowSeven 
-											   time:1.1 
+	SPTween *rowSevenTween=[SPTween tweenWithTarget:rowSeven
+											   time:1.1
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
-	SPTween *rowEightTween=[SPTween tweenWithTarget:rowEight 
-											   time:1.2 
+	SPTween *rowEightTween=[SPTween tweenWithTarget:rowEight
+											   time:1.2
 										 transition:SP_TRANSITION_EASE_IN_OUT_BACK];
 	//
 	[rowOneTween animateProperty:@"x" targetValue:-800];
@@ -523,29 +523,29 @@
 	[rowSevenTween animateProperty:@"x" targetValue:-800];
 	[rowEightTween animateProperty:@"x" targetValue:800];
 	//
-	[rowOneTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						 atObject:self 
+	[rowOneTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowTwoTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						 atObject:self 
+	[rowTwoTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowThreeTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						   atObject:self 
+	[rowThreeTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						   atObject:self
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowFourTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						  atObject:self 
+	[rowFourTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						  atObject:self
 						   forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowFiveTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						  atObject:self 
+	[rowFiveTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						  atObject:self
 						   forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowSixTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						 atObject:self 
+	[rowSixTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						 atObject:self
 						  forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowSevenTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						   atObject:self 
+	[rowSevenTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						   atObject:self
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
-	[rowEightTween addEventListener:@selector(onSingleTransitionOutComplete:) 
-						   atObject:self 
+	[rowEightTween addEventListener:@selector(onSingleTransitionOutComplete:)
+						   atObject:self
 							forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
 	//
 	//[mJuggler addObject:bgTween];
@@ -568,7 +568,7 @@
 		transitionAnimationCounter=0;//reset
 		//dispatch aniamtion complete event
 		//SaumyaEvent *evt=[SaumyaEvent eventWithType:EVENT_TYPE_TRANSITION_IN_TWEEN_END];
-		SaumyaEvent *evt=[[SaumyaEvent alloc]initWithType:EVENT_TYPE_TRANSITION_IN_TWEEN_END 
+		SaumyaEvent *evt=[[SaumyaEvent alloc]initWithType:EVENT_TYPE_TRANSITION_IN_TWEEN_END
 												  bubbles:FALSE];
 		[self dispatchEvent:evt];
 		[evt release];
@@ -582,7 +582,7 @@
 	if (transitionAnimationCounter>=8) {
 		transitionAnimationCounter=0;//reset
 		//dispatch aniamtion complete event
-		SaumyaEvent *evt=[[SaumyaEvent alloc]initWithType:EVENT_TYPE_TRANSITION_OUT_TWEEN_END 
+		SaumyaEvent *evt=[[SaumyaEvent alloc]initWithType:EVENT_TYPE_TRANSITION_OUT_TWEEN_END
 												  bubbles:FALSE];
 		[self dispatchEvent:evt];
 		[evt release];
@@ -674,7 +674,7 @@
 	//[areOptionsOnScreen release];//seems not required!
 	[infoSprite release];
 	//[isInstructionVisible release];
-	
+
 	[rowOne release];
 	[rowTwo release];
 	[rowThree release];
@@ -683,12 +683,12 @@
 	[rowSix release];
 	[rowSeven release];
 	[rowEight release];
-	
+
 	[displayScore release];
 	[displayMiss release];
 	[displayTotalAttempted release];
 	[displayTimer release];
-	
+
 	[super dealloc];
 }
 

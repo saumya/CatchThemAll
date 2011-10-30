@@ -3,10 +3,10 @@
 //  CatchThemAll
 //
 //  Created by Daniel Sperl on 14.01.10. Modified by Saumya on 14.11.2010
-//  
+//
 //
 
-#import "Game.h" 
+#import "Game.h"
 
 @implementation Game
 

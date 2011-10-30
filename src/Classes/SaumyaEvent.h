@@ -16,7 +16,7 @@
 
 #define EVENT_VALUE_REFRESHED @"spriteValueRefreshed"
 
-@interface SaumyaEvent : SPEvent 
+@interface SaumyaEvent : SPEvent
 {
 	int newValue;
 }
