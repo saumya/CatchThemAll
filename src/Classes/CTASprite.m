@@ -36,9 +36,9 @@
 	UIColor *colorThree=[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
 	UIColor *colorFour=[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:255.0/255.0 alpha:1.0];
 	UIColor *colorFive=[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:1.0];
-	
+
 	UIColor *colorBorder=[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
-	
+
 	textureOne=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorOne, colorBorder);
 	textureTwo=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorTwo, colorBorder);
 	textureThree=makeRoundedRectWithBorder(48.0f, 48.0f, 15.0f, colorThree, colorBorder);
@@ -67,14 +67,14 @@
 		SPImage *textureImage=[SPImage imageWithTexture:self.textureTwo];
 		[self addImage:textureImage];
 	}
-	
+
 }
 
 -(void)addImage:(SPImage *)image
 {
 	//NSLog(@"addImage : ---");
 	[self removeChild:self.img];
-	
+
 	self.img=image;
 	self.img.x=0-self.img.width/2;
 	self.img.y=0-self.img.height/2;
@@ -125,13 +125,13 @@
 	}else {
 		self.img.texture=self.textureTwo;
 	}
-	
-	SaumyaEvent *evt=[[SaumyaEvent alloc] initWithType:EVENT_VALUE_REFRESHED 
+
+	SaumyaEvent *evt=[[SaumyaEvent alloc] initWithType:EVENT_VALUE_REFRESHED
 											   bubbles:TRUE];
 	evt.newValue=value;
 	[self dispatchEvent:evt];
 	[evt release];
-	
+
 }
 
 -(void)dealloc

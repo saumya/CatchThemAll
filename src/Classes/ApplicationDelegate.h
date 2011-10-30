@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Sparrow.h" 
+#import "Sparrow.h"
 
-@interface ApplicationDelegate : NSObject <UIApplicationDelegate> 
+@interface ApplicationDelegate : NSObject <UIApplicationDelegate>
 {
-  @private 
+  @private
     UIWindow *mWindow;
     SPView *mSparrowView;
 }
