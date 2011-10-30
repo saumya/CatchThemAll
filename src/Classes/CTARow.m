@@ -67,7 +67,7 @@
 	[self.ctaFour updateValue];
 	[self.ctaFive updateValue];
 	[self.ctaSix updateValue];
-	 
+
 }
 
 -(void)dealloc
@@ -78,7 +78,7 @@
 	[self.ctaFour release];
 	[self.ctaFive release];
 	[self.ctaSix release];
-	
+
 	[super dealloc];
 }
 

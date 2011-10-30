@@ -12,16 +12,16 @@
 #import "TextureUtil.h"
 #import "SaumyaEvent.h"
 
-@interface InstructionSprite : SPSprite 
+@interface InstructionSprite : SPSprite
 {
 	SPSprite *infoBox;
-	
+
 	SPImage *one;
 	SPImage *two;
 	SPImage *three;
 	SPImage *four;
 	SPImage *five;
-	
+
 	SPTextField *infoColor;
 	int touchCounter;
 }

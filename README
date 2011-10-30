@@ -2,8 +2,8 @@ CatchThemAll V 00.01.00
 1. Not yet device tested.
 
 Made with Sparrow framework 1.0 version.
- 
-A simple game where the player is asked to finish as many questions as possible. 
+
+A simple game where the player is asked to finish as many questions as possible.
 The question changes when the counter becomes 1000.
 Uses multi-touch feature to give the right answer.
 

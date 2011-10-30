@@ -13,7 +13,7 @@
 
 #import "CTASprite.h"
 
-@interface CTARow : SPSprite 
+@interface CTARow : SPSprite
 {
 	CTASprite *ctaOne;
 	CTASprite *ctaTwo;
